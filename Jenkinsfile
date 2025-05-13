@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git url: 'https://github.com/yourusername/your-repo.git'
+                git url: 'https://github.com/yashuchavhan38/portfolio.git'
             }
         }
         stage('Install') {
