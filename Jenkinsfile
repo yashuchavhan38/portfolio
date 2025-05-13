@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git url: 'https://github.com/yashuchavhan38/portfolio.git', branch: 'main', credentialsId: '13870e3e-4a63-4212-ac71-5b9deee119aa'
+                git credentialsId: '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', url: 'https://github.com/yashuchavhan38/portfolio.git', branch: 'main'
             }
         }
 
@@ -14,21 +14,21 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                bat 'npm test'
-            }
-        }
-
         stage('Build') {
             steps {
                 bat 'npm run build'
             }
         }
 
+        stage('Test') {
+            steps {
+                bat 'npm test'
+            }
+        }
+
         stage('Deploy') {
             steps {
-                echo 'Deploy stage - Add your deploy command here'
+                echo 'Deploy stage goes here...'
             }
         }
     }
